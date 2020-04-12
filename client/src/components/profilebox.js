@@ -14,20 +14,21 @@ class ProfileTetxbox extends Component {
 		//push card if it's not available
 		if(!this.props.cards.some((obj) => obj.username === input_text)) {
 			let newCard = 
-			<Col xs={20}
-			md={7}
-			lg={7}
-			xl={7}
-			key={input_text}
-			style={
-				{paddingBottom: 20 }
+			<Col xs = { 20 }
+			md = { 7 }
+			lg = { 7 }
+			xl = { 7 }
+			key = { input_text }
+			style = {0
+				{ paddingBottom: 20 }
 			}>
 			</Col>
+			this.props.addCard(newCard, input_text)
 		}
 
 		if(this.props.cards.legth === 0) {
 			notification.info({
-				message:'Search for another username to compare your Github score',
+				message:'Search for another username to compare your Twitter score',
 			});
 		} 
 	};
@@ -36,9 +37,9 @@ class ProfileTetxbox extends Component {
 
 		return(
 			<div>
-				<Row type="flex"
-				justify="center"
-				style={
+				<Row type = "flex"
+				justify = "center
+				style = {
 					{padding: 40}
 				}>
 
@@ -48,23 +49,24 @@ class ProfileTetxbox extends Component {
 				xs={
 					{span: 19}
 				}
-				gutter={24}>
+				gutter = {24}>
 
-				<Input.Search placeholder="Twitter username"
-				enterButton={
-					<Button type="primary"
-					icon="Twitter">
+				<Input.Search placeholder="Twitter Username"
+				enterButton = {
+					<Button type = "primary"
+					icon = "Twitter">
 					Search
 					</Button>}
-					onSearch={value=> this.onSubmit(value)} />
+					size="large"
+					onSearch = { value => this.onSubmit(value) }/>
 				</Col>
 				</Row>
 
 
-				<Row type="flex"
-				justify="center"
-				gutter={24}>
-					this.props.cards.reduce((acc,obj) => [...acc,obj.card],[])
+				<Row type = "flex"
+				justify = "center"
+				gutter= {24}>
+					this.props.cards.reduce((acc,obj) => [...acc,obj.card],[]) }
 				</Row>
 			</div>
 

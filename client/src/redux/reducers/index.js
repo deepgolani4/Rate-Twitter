@@ -1,7 +1,6 @@
 import { combineReducers } from 'redux';
-import CardReducer from './CardReducer';
-
+import  CardsReducer  from './CardsReducer'
 
 export default combineReducers({
-	CardReducer
+    CardsReducer
 })
